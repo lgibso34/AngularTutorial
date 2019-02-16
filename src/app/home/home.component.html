@@ -1,0 +1,42 @@
+<p>
+  {{ homeTitle }}
+</p>
+<!--
+<-- this is the text inside the tag in app.component.html -!->
+<ng-content></ng-content>
+<br>
+
+<-- property binding -!->
+<input [value]="myString" />
+<input [required]="myBoolean" />
+<br>
+<input value="{{myString}}" />
+<input required="{{myBoolean}}" />
+<br>
+
+<-- event binding -!->
+<button (click)="alertMe('i like food')" >Click me</button>
+<br>
+<-- 2-way data binding -!->
+
+<p>2-Way Data Binding</p>
+<p> {{twoWayninja.name}} </p>
+<p> {{twoWayninja.belt}} </p>  
+
+<br>
+
+<-- data was passed from the app component to the home component
+ needed to add 
+import { FormsModule } from '@angular/forms'; to app.module.ts
+
+then add it to the imports array just below that
+-!->
+<input [(ngModel)] ="ninja.name" />
+<p>Custom Property Binding</p>
+<p>{{ninja.name}}</p>
+<p>{{ninja.belt}}</p>
+
+<-- data was passed from the home component to the app comp -!->
+<button (click)="fireYellEvent($event)" >YELL</button>
+
+-->

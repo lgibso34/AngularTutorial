@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
 
 @Component({
   selector: 'app-directory',

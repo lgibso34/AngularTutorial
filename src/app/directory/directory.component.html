@@ -4,9 +4,8 @@
 
 <form id="filter">
     <label>Filter ninjas by name:</label>
-    <input type="text" [(ngModel)]="term" />
+    <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="term" />
 </form>
-
 
 <ul id="ninja-listing">
   <li *ngFor="let ninja of ninjas | filter:term">

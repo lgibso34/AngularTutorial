@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from '../logging.service';
+import { DataService } from '../data.service'
+
 
 
 @Component({
@@ -9,19 +11,18 @@ import { LoggingService } from '../logging.service';
 })
 export class DirectoryComponent implements OnInit {
 
-  ninjas = [
-    {name: 'Yoshi', belt: 'black'},
-    {name: 'Ryu', belt: 'red'},
-    {name: 'Crystal', belt: 'purple'}
-  ];
+  ninjas = [];
 
-  constructor(private logger: LoggingService) { }
+  constructor(private logger: LoggingService, private dataService: DataService) { }
 
   logIt(){
     this.logger.log();
   }
 
   ngOnInit() {
+    var test = this.dataService.fetchData();
+    console.log(test);
+    this.ninjas = test;
   }
 
 }

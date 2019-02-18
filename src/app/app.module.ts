@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { FilterPipe } from './filter.pipe';
 import { LoggingService } from './logging.service';
+import { HttpClientModule} from '@angular/common/http';
+import { DataService } from './data.service';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +22,10 @@ import { LoggingService } from './logging.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule //must be after BrowserModule
   ],
-  providers: [LoggingService],
+  providers: [LoggingService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

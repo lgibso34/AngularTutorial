@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
+import { LoggingService } from '../logging.service';
+
 
 @Component({
   selector: 'app-directory',
@@ -14,7 +15,11 @@ export class DirectoryComponent implements OnInit {
     {name: 'Crystal', belt: 'purple'}
   ];
 
-  constructor() { }
+  constructor(private logger: LoggingService) { }
+
+  logIt(){
+    this.logger.log();
+  }
 
   ngOnInit() {
   }

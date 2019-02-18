@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LoggingService } from '../logging.service'; // provided in app.module.ts. made in logging.service.ts
+
 
 @Component({
   selector: 'app-home',
@@ -27,7 +29,11 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private logger: LoggingService) { }
+
+  logIt(){
+    this.logger.log();
+  }
 
   ngOnInit() {
   }

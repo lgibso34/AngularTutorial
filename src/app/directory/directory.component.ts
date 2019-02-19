@@ -19,10 +19,15 @@ export class DirectoryComponent implements OnInit {
     this.logger.log();
   }
 
+  showData(){
+    this.dataService.fetchData()
+    .subscribe(
+      (data: any) => { this.ninjas = data}
+    );
+  }
+
   ngOnInit() {
-    var test = this.dataService.fetchData();
-    console.log(test);
-    this.ninjas = test;
+    this.showData();
   }
 
 }

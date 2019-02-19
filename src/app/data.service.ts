@@ -11,8 +11,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   fetchData(){
-    return this.http.get('assets/ninjas.json').subscribe(
-      (data) => { return data }
-    );
+    return this.http.get('assets/ninjas.json')
   }
 }
